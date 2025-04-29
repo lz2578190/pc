@@ -85,6 +85,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Install MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+      
+      - name: Install Visual Studio dependencies
+        shell: powershell
+        run: |
+          choco install visualstudio2022buildtools --params "--add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --includeOptional" -y
+          choco install windows-sdk-10-version-20348-all -y
+
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
