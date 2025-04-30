@@ -91,8 +91,8 @@ jobs:
       - name: Install Visual Studio dependencies
         shell: powershell
         run: |
-          choco install visualstudio2022buildtools --params "--add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --includeOptional" -y
-          choco install windows-sdk-10-version-20348-all -y
+          choco install visualstudio2022buildtools --params "--add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Component.Windows10SDK.20348 --includeRecommended --includeOptional" -y
+
 
 
       - name: Set up Flutter
