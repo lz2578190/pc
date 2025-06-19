@@ -112,7 +112,7 @@ jobs:
           flutter pub get
           cd ..
           ~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart
-          python .\build.py --portable --hwcodec --flutter --vram --skip-portable-pack
+          python .\build.py --portable --flutter --vram --skip-portable-pack
           rm -r ./rustdesk/*
           copy-item -Force -path "./yuliu/*" -destination "./rustdesk"
           copy-item -Force -path "./yuliu/usbmmidd_v2/*" -destination "./rustdesk/usbmmidd_v2"
